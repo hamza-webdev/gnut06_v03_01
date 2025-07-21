@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  gnut06-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gnut06-app
+    restart: unless-stopped
+    ports:
+      - "3002:80"
+    networks:
+      - gnut06-network
+    environment:
+      - NODE_ENV=production
+    labels:
+      - "traefik.enable=false"
+
+networks:
+  gnut06-network:
+    driver: bridge
