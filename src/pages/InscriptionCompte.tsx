@@ -5,10 +5,11 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Separator } from '@/components/ui/separator';
-import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
+import { Checkbox } from '@/components/ui/checkbox';
+import { Eye, EyeOff, Mail, Lock, User, Phone, MapPin, Calendar } from 'lucide-react';
 import { useState } from 'react';
 
-const Inscription = () => {
+const InscriptionCompte = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   return (
@@ -20,13 +21,41 @@ const Inscription = () => {
             <Card className="bg-card border-border shadow-xl">
               <CardContent className="p-8">
                 <div className="text-center mb-8">
-                  <h1 className="text-3xl font-bold text-gradient mb-2">Connexion</h1>
+                  <h1 className="text-3xl font-bold text-gradient mb-2">Inscription</h1>
                   <p className="text-muted-foreground">
-                    Connectez-vous à votre espace GNUT06
+                    Créez votre compte GNUT06
                   </p>
                 </div>
 
                 <form className="space-y-6">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="nom">Nom</Label>
+                      <div className="relative">
+                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+                        <Input 
+                          id="nom" 
+                          type="text" 
+                          placeholder="Nom"
+                          className="pl-10"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="space-y-2">
+                      <Label htmlFor="prenom">Prénom</Label>
+                      <div className="relative">
+                        <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+                        <Input 
+                          id="prenom" 
+                          type="text" 
+                          placeholder="Prénom"
+                          className="pl-10"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
                   <div className="space-y-2">
                     <Label htmlFor="email">Email</Label>
                     <div className="relative">
@@ -60,18 +89,73 @@ const Inscription = () => {
                     </div>
                   </div>
 
-                  <div className="flex items-center justify-between">
-                    <label className="flex items-center">
-                      <input type="checkbox" className="mr-2" />
-                      <span className="text-sm text-muted-foreground">Se souvenir de moi</span>
-                    </label>
-                    <a href="#" className="text-sm text-primary hover:underline">
-                      Mot de passe oublié ?
-                    </a>
+                  <div className="space-y-2">
+                    <Label htmlFor="date-naissance">Date de naissance</Label>
+                    <div className="relative">
+                      <Calendar className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+                      <Input 
+                        id="date-naissance" 
+                        type="date" 
+                        className="pl-10"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="lieu-naissance">Lieu de naissance</Label>
+                    <div className="relative">
+                      <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+                      <Input 
+                        id="lieu-naissance" 
+                        type="text" 
+                        placeholder="Ville de naissance"
+                        className="pl-10"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="adresse">Adresse</Label>
+                    <div className="relative">
+                      <MapPin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+                      <Input 
+                        id="adresse" 
+                        type="text" 
+                        placeholder="Votre adresse complète"
+                        className="pl-10"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="telephone">Numéro de téléphone</Label>
+                    <div className="relative">
+                      <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
+                      <Input 
+                        id="telephone" 
+                        type="tel" 
+                        placeholder="+33 6 12 34 56 78"
+                        className="pl-10"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-2">
+                    <Checkbox id="conditions" />
+                    <Label htmlFor="conditions" className="text-sm">
+                      J'accepte les{' '}
+                      <a href="#" className="text-primary hover:underline">
+                        conditions générales d'utilisation
+                      </a>{' '}
+                      et la{' '}
+                      <a href="#" className="text-primary hover:underline">
+                        politique de confidentialité
+                      </a>
+                    </Label>
                   </div>
 
                   <Button className="w-full btn-tech">
-                    Se connecter
+                    Créer mon compte
                   </Button>
 
                   <div className="relative">
@@ -110,9 +194,9 @@ const Inscription = () => {
 
                   <div className="text-center">
                     <p className="text-sm text-muted-foreground">
-                      Pas encore de compte ?{' '}
-                      <a href="#" className="text-primary hover:underline font-medium">
-                        Créer un compte
+                      Déjà un compte ?{' '}
+                      <a href="/inscription" className="text-primary hover:underline font-medium">
+                        Se connecter
                       </a>
                     </p>
                   </div>
@@ -127,4 +211,4 @@ const Inscription = () => {
   );
 };
 
-export default Inscription;
+export default InscriptionCompte;

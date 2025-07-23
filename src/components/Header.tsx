@@ -45,8 +45,13 @@ const Header = () => {
               </Button>
             </Link>
             <Link to="/inscription">
-              <Button className="btn-tech">
+              <Button variant="outline" size="sm">
                 Connexion
+              </Button>
+            </Link>
+            <Link to="/inscription-compte">
+              <Button className="btn-tech">
+                Inscription
               </Button>
             </Link>
           </div>
