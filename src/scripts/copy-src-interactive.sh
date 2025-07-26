@@ -8,7 +8,7 @@ set -e
 VPS_IP="167.86.93.157"
 VPS_USER="vpsadmin"
 SOURCE_DIR="./src"
-DEST_DIR="/home/vpsadmin/gnut06"
+DEST_DIR="/home/vpsadmin/gnut06"  
 
 echo "📁 Copie interactive du dossier src vers le VPS"
 echo "Source: $SOURCE_DIR"

@@ -8,7 +8,7 @@ set -e
 # Configuration
 VPS_IP="167.86.93.157"
 VPS_USER="vpsadmin"
-DOMAIN="gnut06.zidani.org"
+DOMAIN="gnut06.zidani.org" 
 APP_DIR="gnut06"
 
 # Options SSH robustes

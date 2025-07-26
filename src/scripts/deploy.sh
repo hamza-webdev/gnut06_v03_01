@@ -36,7 +36,7 @@ copy_to_vps() {
 }
 
 echo "📦 Construction de l'application en local..."
-npm run build  Besmillah2025
+npm run build 
 
 echo "📁 Préparation du répertoire sur le VPS..."
 echo "🗑️ Suppression de l'ancien répertoire s'il existe..."

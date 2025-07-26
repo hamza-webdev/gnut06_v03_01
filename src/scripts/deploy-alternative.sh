@@ -140,7 +140,7 @@ fi
 
 echo ""
 echo "🔍 Étape 9: Vérification des fichiers"
-run_ssh "ls -la ~/$APP_DIR/"  Besmillah2025
+run_ssh "ls -la ~/$APP_DIR/"  
 
 echo ""
 echo "🐳 Étape 10: Docker"
